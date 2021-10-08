@@ -1,0 +1,10 @@
+{% extends 'akapp/base.html' %}
+
+{% block content %}
+<h3>週報削除</h3>
+<form method="post">
+    {% csrf_token %}
+    <p>{{ shuho.pub_date }}を削除します</p>
+    <input type="submit" value="削除">
+</form>
+{% endblock %}

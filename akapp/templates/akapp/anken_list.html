@@ -1,0 +1,12 @@
+{% extends 'akapp/base.html' %}
+
+{% block content %}
+<h3>案件一覧</h3>
+{% for anken in anken_list %}
+<p>
+    {{ anken.pub_date }}
+    <a href="{% url 'akapp:anken_detail' anken.pk %}">{{ anken.ankenmei }}</a>
+</p>
+{% endfor %}
+<a href="{% url 'akapp:index' %}">戻る</a>
+{% endblock %}

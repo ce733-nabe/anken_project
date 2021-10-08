@@ -1,0 +1,23 @@
+{% extends 'akapp/base.html' %}
+
+{% block content %}
+<h3>案件詳細</h3>
+<p>{{ anken.pub_date }}</p>
+<p>{{ anken.ankenmei }}</p>
+<p>{{ anken.naiyou }}</p>
+<a href="{% url 'akapp:anken_update' anken.pk %}">編集</a>
+<a href="{% url 'akapp:anken_delete' anken.pk %}">削除</a>
+<a href="{% url 'akapp:shuho_create' %}">週報新規作成</a>
+<a href="{% url 'akapp:index' %}">戻る</a>
+
+{% for shuho in anken.shuho_set.all %}
+    <p>{{ shuho.pub_date }}</p>
+    <p>{{ shuho.naiyou }}</p>
+    <p>{{ shuho.categori }}</p>
+    <p>{{ shuho.updated_at }}</p>
+
+    <a href="{% url 'akapp:shuho_update' shuho.pk %}">編集</a>
+    <a href="{% url 'akapp:shuho_delete' shuho.pk %}">削除</a>
+{% endfor %}
+
+{% endblock %}

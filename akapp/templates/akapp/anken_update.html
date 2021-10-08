@@ -1,0 +1,10 @@
+{% extends 'akapp/base.html' %}
+
+{% block content %}
+<h3>案件編集</h3>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="保存">
+</form>
+{% endblock %}
