@@ -6,6 +6,8 @@
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="保存">
+    <input type="reset" value="キャンセル">
+    <a href="#" onclick="history.back(); return false;">戻る</a>
 </form>
 {% endblock %}
 

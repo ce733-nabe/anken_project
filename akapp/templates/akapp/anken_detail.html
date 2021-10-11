@@ -8,7 +8,7 @@
 <a href="{% url 'akapp:anken_update' anken.pk %}">編集</a>
 <a href="{% url 'akapp:anken_delete' anken.pk %}">削除</a>
 <a href="{% url 'akapp:shuho_create' %}">週報新規作成</a>
-<a href="{% url 'akapp:index' %}">戻る</a>
+<a href="{% url 'akapp:anken_list' %}">戻る</a>
 
 {% for shuho in anken.shuho_set.all %}
     <p>{{ shuho.pub_date }}</p>
