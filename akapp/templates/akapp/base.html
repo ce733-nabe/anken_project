@@ -10,10 +10,32 @@
     <script src="{% static 'akapp/js/bootstrap.bundle.min.js' %}"></script>
 
     <link rel="stylesheet" type="text/css" href="{% static 'akapp/css/style.css' %}">
-    
+
 </head>
 
 <body>
+    <!--navbar-->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+            <a class="navbar-brand" href="#">案件管理APP</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="{% url 'akapp:index' %}">INDEX</a>
+                    <a class="nav-link" href="{% url 'akapp:anken_list' %}">案件一覧</a>
+                    <a class="nav-link" href="{% url 'akapp:anken_create' %}">案件新規作成</a>
+                </div>
+            </div>
+            </div>
+        </nav>
+    </header>
+    <!--navbar end-->
+
+    <div><p></p></div>
+
     {% block content %}
     {% endblock %}
 </body>
