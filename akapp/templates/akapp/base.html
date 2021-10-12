@@ -9,7 +9,17 @@
     <link rel="stylesheet" type="text/css" href="{% static 'akapp/css/bootstrap.min.css' %}">
     <script src="{% static 'akapp/js/bootstrap.bundle.min.js' %}"></script>
 
+    <!--css-->
     <link rel="stylesheet" type="text/css" href="{% static 'akapp/css/style.css' %}">
+
+    <!--carender-->
+    {% load bootstrap4 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript jquery='full' %}
+
+    {% block extrahead %}
+    {% endblock %}
+    <!--carender end-->
 
 </head>
 

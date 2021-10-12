@@ -1,5 +1,6 @@
 from django import forms
 from .models import Anken, Shuho
+import bootstrap_datepicker_plus as datetimepicker
 
 
 class AnkenForm(forms.ModelForm):
@@ -20,6 +21,15 @@ class AnkenForm(forms.ModelForm):
                 'jissekikousu',
                 'updated_at',
                 )
+        widgets = {
+            'nouki': datetimepicker.DateTimePickerInput(
+                format='%Y-%m-%d %H:%M:%S',
+                options={
+                    'locale': 'ja',
+                    'dayViewHeaderFormat': 'YYYY年 MMMM',
+                }
+            ),
+        }
         
                     
 class ShuhoForm(forms.ModelForm):

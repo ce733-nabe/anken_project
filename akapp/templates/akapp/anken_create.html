@@ -2,6 +2,10 @@
 
 {% load bootstrap4 %}
 
+{% block extrahead %}
+{{ form.media }}
+{% endblock %}
+
 {% block content %}
 <div class="container">
     <span class="text-secondary">案件新規作成</span><br>
