@@ -5,6 +5,7 @@
 <form method="post">
     {% csrf_token %}
     <p>{{ anken.pub_date }} {{ anken.ankenmei }} を削除します</p>
-    <input type="submit" value="削除">
+    <input type="submit" class="btn btn-danger btn-sm" value="削除">
+    <a class="btn btn-outline-primary btn-sm" href="#" onclick="history.back(); return false;">キャンセル</a>
 </form>
 {% endblock %}
