@@ -1,6 +1,8 @@
 from django import forms
 from .models import Anken, Shuho
 import bootstrap_datepicker_plus as datetimepicker
+from django_summernote.widgets import SummernoteWidget
+
 
 
 class AnkenForm(forms.ModelForm):
@@ -29,6 +31,7 @@ class AnkenForm(forms.ModelForm):
                     'dayViewHeaderFormat': 'YYYY年 MMMM',
                 }
             ),
+            'naiyou': SummernoteWidget(),
         }
         
                     
@@ -41,6 +44,9 @@ class ShuhoForm(forms.ModelForm):
                 'categori',
                 'updated_at',
                 )
+        widgets = {
+            'naiyou': SummernoteWidget(),
+        }
 
         
         
