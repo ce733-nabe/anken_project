@@ -1,12 +1,33 @@
 {% extends 'akapp/base.html' %}
 
 {% block content %}
-<h3>案件一覧</h3>
-{% for anken in anken_list %}
-<p>
-    {{ anken.pub_date }}
-    <a href="{% url 'akapp:anken_detail' anken.pk %}">{{ anken.ankenmei }}</a>
-</p>
-{% endfor %}
-<a href="{% url 'akapp:index' %}">戻る</a>
+<div class="container">
+    <table class="table table-striped">
+        <caption class="caption-top">案件一覧</caption>
+        <thead>
+            <tr>
+            <th scope="col">日付</th>
+            <th scope="col">更新日時</th>
+            <th scope="col">案件名</th>
+            <th scope="col">担当者</th>
+            <th scope="col">状態</th>
+            <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for anken in anken_list %}
+            <tr>
+            <td>{{ anken.pub_date }}</td>
+            <td>{{ anken.updated_at }}</td>
+            <td>{{ anken.ankenmei }}</td>
+            <td>{{ anken.get_tantousha_display }}</td>
+            <td>{{ anken.get_joutai_display }}</td>
+            <td><a class="btn btn-secondary btn-sm" href="{% url 'akapp:anken_detail' anken.pk %}">詳細</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a class="btn btn-primary btn-sm" href="{% url 'akapp:anken_create' %}">案件新規作成</a>
+    <a href="{% url 'akapp:index' %}">戻る</a>
+</div>
 {% endblock %}

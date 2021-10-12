@@ -1,13 +1,16 @@
 {% extends 'akapp/base.html' %}
 
-{% block content %}
-<h3>週報新規作成</h3>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="保存">
-    <input type="reset" value="キャンセル">
-    <a href="#" onclick="history.back(); return false;">戻る</a>
-</form>
-{% endblock %}
+{% load bootstrap4 %}
 
+{% block content %}
+<div class="container">
+    <span class="text-secondary">週報新規作成</span><br>
+    <form method="post">
+        {% csrf_token %}
+        {% bootstrap_form form layout='horizontal' %}
+        <input type="submit" class="btn btn-primary btn-sm" value="保存">
+        <input type="reset" class="btn btn-outline-primary btn-sm" value="キャンセル">
+        <a href="#" onclick="history.back(); return false;">戻る</a>
+    </form>
+</div>
+{% endblock %}
