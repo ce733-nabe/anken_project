@@ -57,6 +57,8 @@ class ShuhoForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         self.fields['pub_date'].widget.attrs['readonly'] = 'readonly'
         self.fields['updated_at'].widget.attrs['readonly'] = 'readonly'
+        
+        
 
         
         

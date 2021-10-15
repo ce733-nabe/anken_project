@@ -57,7 +57,7 @@ class ShuhoCreateView(CreateView):
     template_name = 'akapp/shuho_create.html'
     form_class = ShuhoForm
     #success_url = reverse_lazy('akapp:shuho_create_complete')
-
+    
     def get_success_url(self):
         print(self.object.anken.pk)
         return reverse('akapp:anken_detail', kwargs={'pk': self.object.anken.pk})
