@@ -34,11 +34,6 @@ class AnkenForm(forms.ModelForm):
             'naiyou': SummernoteWidget(),
         }
         
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields['pub_date'].widget.attrs['readonly'] = 'readonly'
-        self.fields['updated_at'].widget.attrs['readonly'] = 'readonly'
-        
                     
 class ShuhoForm(forms.ModelForm):
     class Meta:
@@ -52,11 +47,6 @@ class ShuhoForm(forms.ModelForm):
         widgets = {
             'naiyou': SummernoteWidget(),
         }
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields['pub_date'].widget.attrs['readonly'] = 'readonly'
-        self.fields['updated_at'].widget.attrs['readonly'] = 'readonly'
 
         
         
